@@ -1,0 +1,21 @@
+<div class="index">
+    <ul class="row">
+        <li class="col-xs-12 col-md-3">
+            <%= link_to "Writing", new_content_path, class: "btn btn-info" %>
+        </li>
+        
+        <li class="col-xs-12 col-md-6">
+            <div class="show">
+                <% @contents.each do |content| %>
+                    <%= link_to content_path(content.id) do %>
+                        <%= image_tag content.image.url, class: "index_image" %>
+                    <% end %>
+                <% end %>
+            </div>
+        </li>
+        
+        <li class="col-xs-12 col-md-3">
+             
+        </li>
+    </ul>
+</div>

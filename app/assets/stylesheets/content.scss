@@ -1,0 +1,21 @@
+// Place all the styles related to the content controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+li{
+    list-style:none;
+}
+.show{
+    border: 1px solid #E6ECF0;
+}
+.index_image{
+    height: 150px;
+    width: 150px;
+}
+.preview{
+    max-height: 500px;
+    max-width: 500px;
+}
+.show_image{
+    max-height: 500px;
+    max-width: 500px;
+}

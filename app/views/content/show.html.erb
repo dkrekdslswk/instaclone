@@ -1,0 +1,26 @@
+<div class="show">
+    <div class="row">
+        <div class="col-xs-12">
+            <% type = file_type(@content.image.url) %>
+            <% if type == 'image' %>
+                <%= image_tag @content.image.url, class: "show_image" %>
+            <% elsif type == 'video' %>
+                <%= video_tag @content.image, :controls => true, class: "show_image"  %>
+            <% end %>
+        </div>
+        <div class="col-xs-10">
+            <p><%= @content.user.name %> <%= @content.updated_at %></p>
+            <p><%= @content.content %></p>
+        </div>
+        <div class="col-xs-2">
+            <% if logged_in? && (current_user.id === @content.user_id) %>
+                <p><%= link_to "edit", edit_content_path(@content.id), class: "btn btn-default" %></p>
+                <p><%= link_to "delete", content_path(@content.id), method: :delete, data: { confirm: 'delete on more check' }, class: "btn btn-default" %></p>
+            <% else %>
+            <% end %>
+        </div>
+    </div>
+    <div>
+        <p><%= link_to "index", content_index_path, class: "btn btn-default" %></p>
+    </div>
+</div>
