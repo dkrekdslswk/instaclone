@@ -23,14 +23,14 @@
         <% if @content.image.present? %>
             <% type = file_type(@content.image.url) %>
             <% if type == 'image' %>
-              <%= image_tag @content.image.url, class: "preview" %>
+              <%= image_tag @content.image.url, class: "preview" %><br>
               <%= video_tag "", :controls => true, class: "preview" %>
             <% elsif type == 'video' %>
-              <%= image_tag "" , class: "preview" %>
+              <%= image_tag "" , class: "preview" %><br>
               <%= video_tag @content.image, :controls => true, class: "preview" %>
             <% end %>
         <% else %>
-          <%= image_tag "" , class: "preview" %>
+          <%= image_tag "" , class: "preview" %><br>
           <%= video_tag "", :controls => true, class: "preview" %>
         <% end %>
       </div>
